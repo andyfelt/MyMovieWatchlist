@@ -53,7 +53,12 @@
 		
 		Repository -> Pull :
 			Gets new stuff, this is how the typer will start each day and any time when need to get changes.
-			Always pull before pushing.
+			Always pull before pushing. 
+			If there is an error you my need to pull the origin first. 
+			
+		-------
+		Look over your changes.
+		Add a summary & commit those changes. 
 			
 		Repository -> Push :
 			Pushes up your changes. 
