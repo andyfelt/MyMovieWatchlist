@@ -1,0 +1,10 @@
+To import the project (for the first time) in Eclipse from github:
+File->Import...Git -> Projects from Git (with smart import) ... clone URL
+   (paste from the github repository) (more steps) at some point, tell 
+   about where to import to: in your workspace
+   
+To pull (check out a brand new version from git) in Eclipse: 
+right click on the project -> Team -> pull
+
+To push (check in to git changes you've made locally) in Eclipse:
+right click on the project -> Team -> push branch 'xx'  (master in my case)
