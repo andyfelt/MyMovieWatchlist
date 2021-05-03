@@ -20,7 +20,7 @@
  	
  	Then from Options -> Git :
  	
- 		My name there is the same as my username in Github.
+ 		There my name is the same as my username in Github.
  		Use the same email used for your Github. 
  		
 4. Clone the repository
@@ -54,10 +54,11 @@
 		Repository -> Pull :
 			Gets new stuff, this is how the typer will start each day and any time when need to get changes.
 			Always pull before pushing. 
-			If there is an error you my need to pull the origin first. 
+			If there is an error you may need to pull the origin first. 
 			
 		-------
-		Look over your changes.
+		Look over your changes:
+			Select each file on the left and review your changes shown on the right. 
 		Add a summary & commit those changes. 
 			
 		Repository -> Push :
