@@ -1,0 +1,68 @@
+ 1. Install Git (if not already)
+ 
+ 	https://git-scm.com/download/
+ 	
+ 	Run through the installer, all the defaults are fine (even the default editor).
+ 	
+ 2. Configure Git bash or Github desktop
+
+ 	If you kept the defaults during Git install then you have Git Bash.
+ 		Use that if you know how or can figure it out with online guides.
+ 		
+ 	ELSE skip bash and continue with Github desktop.
+ 	
+ 	https://desktop.github.com/
+ 	
+ 3. With Github desktop open:
+ 
+ 	Go to File -> Options -> Accounts : 
+ 		Sign in to Github
+ 	
+ 	Then from Options -> Git :
+ 	
+ 		My name there is the same as my username in Github.
+ 		Use the same email used for your Github. 
+ 		
+4. Clone the repository
+
+	File -> Clone Repository
+		The Github.com tab should be open by default and display all repo's you own or are a collaborator of. 
+		
+		Select andyfelt/MyMovieWatchlist
+		
+		Find where to clone to:
+			Choose button -> Find the folder where your Eclipse projects are located and select it
+			
+		Click Clone button
+		
+5. Eclipse:
+
+	File -> Open projects from file system -> Directory :
+		File folder MyMovieWatchlist & select it
+		
+	Make sure the folder is selected/checked
+	
+	Click finish.
+	
+6. Pull/Push
+
+	Make changes in Eclipse as normal.
+	
+	Open Github desktop:
+		If this is your only repo then MyMoviewatchlist should be selected and the branch master.
+		
+		Repository -> Pull :
+			Gets new stuff, this is how the typer will start each day and any time when need to get changes.
+			Always pull before pushing.
+			
+		Repository -> Push :
+			Pushes up your changes. 
+			
+------------------------------------------------------------------------------------------------------
+I don't know what a conflict looks like so we will figure that out if we reach that bridge 
+	but only one person should be pushing at a time (the typer).
+You can use Gitbash instead of Github desktop and/or a different IDE/editor but my help will be limited 
+	(worth a shot though).
+Hope this helps, it's all I got.
+	-Tyler
+	
