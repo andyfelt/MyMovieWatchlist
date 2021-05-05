@@ -1,7 +1,7 @@
 package classproject;
 
 public class MovieList {
-	// This comment added by AJF:  Yes!!   Hello? Third try!!
+	// This comment added by AJF:  
 
 	public MovieLibrary genresFromUser(boolean[] genreType, double minimum) {
 		
