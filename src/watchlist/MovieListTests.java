@@ -1,4 +1,4 @@
-import static org.junit.Assert.*;
+package watchlist;
 
 import org.junit.Test;
 
@@ -9,7 +9,7 @@ public class MovieListTests {
 		RankingQueue queue = new RankingQueue();
 		queue.fromFile("u.data");
 		MovieLibrary library = new MovieLibrary();
-		library.fromFile("u.item.item");
+		library.fromFile("u.item");
 		boolean[] genres = library.top().getMovieType();
 		MovieList list = new MovieList();
 		MovieLibrary movies = list.findGoodType(genres, library, queue, 2.5);

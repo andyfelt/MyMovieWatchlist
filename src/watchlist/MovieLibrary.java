@@ -70,7 +70,7 @@ public class MovieLibrary extends LinkedStack<Movie> {
 	public MovieLibrary findType(String type){
 		
 		//Test the input type to ensure it is valid. if not, return null from method
-		String[] allTypes = this.top.getInfo().typeDescription;
+		String[] allTypes = Movie.typeDescription;
 		boolean valid = false;
 		for(int i = 0; i < allTypes.length; i++)
 			if(allTypes[i].equalsIgnoreCase(type)) {
@@ -106,6 +106,12 @@ public class MovieLibrary extends LinkedStack<Movie> {
 			}
 		} 
 		return selected;
+	}
+	
+	//returns the top movie node in the stack
+		//by default returns null if the stack is empty
+	public LLNode<Movie> getTopNode() {
+		return this.top;
 	}
 	
 }

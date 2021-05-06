@@ -98,7 +98,7 @@ public class Movie{
 	}
 
 	public void setTypeDescription(String[] typeDescription) {
-		this.typeDescription = typeDescription;
+		Movie.typeDescription = typeDescription;
 	}
 
 	//Method for creating an display of the data

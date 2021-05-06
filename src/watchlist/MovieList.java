@@ -1,7 +1,6 @@
 package watchlist;
 
-public class MovieList {
-	// This comment added by AJF:  
+public class MovieList {  
 
 	public MovieLibrary genresFromUser(boolean[] genreType, double minimum) {
 		
@@ -10,6 +9,7 @@ public class MovieList {
 		return null;
 		
 	}
+	
 	// finding the movies that satisfy one the genre inputs
 	public MovieLibrary findGoodType(boolean[] genreType, MovieLibrary fullLibrary, RankingQueue queue, double avgRating) {
 		MovieLibrary toReturn = new MovieLibrary();
@@ -31,17 +31,13 @@ public class MovieList {
 			fullLibrary.pop();
 		}
 		
-		//TODO: while loop to push everything back on the library
+		//while loop to push everything back on the library
 		while (!tempStack.isEmpty()) {
 			fullLibrary.push(tempStack.top());
 			tempStack.pop();
 		}
 
-		
-		
 		return toReturn;
 	}
-	
-	
 	
 }

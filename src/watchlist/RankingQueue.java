@@ -52,7 +52,7 @@ public class RankingQueue extends ArrayUnbndQueue<Ranking> implements MyUnbounde
 		LLNode<Movie> movieNode = typeLibrary.getTopNode();
 		while (movieNode != null) {
 			Movie movie = movieNode.getInfo();
-			int movieID = movie.getMovieId();
+			int movieID = movie.getMovieID();
 			double avgRating = this.movieAvgRating(movieID);
 			if (avgRating >= minAvgRating)
 				goodTypeLibrary.push(movie);
