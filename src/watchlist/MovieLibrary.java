@@ -28,16 +28,18 @@ public class MovieLibrary extends LinkedStack<Movie> {
 	}
 	
 	//Method toString that prints out current stack w/out changing stack
-	public void stackToString() {
+	public String toString() {
+		String toReturn = "";
 		LLNode<Movie> endLink = null; // link of the last node on the list is null
 		while(endLink != top) { 
 			LLNode<Movie> currentNode = top;
 			while(currentNode.getLink() != endLink) {
 				currentNode = currentNode.getLink();
 			}
-			System.out.println(currentNode.getInfo().toString());
+			toReturn+= currentNode.getInfo().toString();
 			endLink = currentNode;
 		}
+		return toReturn;
 	}
 		
 	//Method inLibrary that takes input string and returns boolean if exist.
