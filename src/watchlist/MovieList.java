@@ -32,6 +32,12 @@ public class MovieList {
 		}
 		
 		//TODO: while loop to push everything back on the library
+		while (!tempStack.isEmpty()) {
+			fullLibrary.push(tempStack.top());
+			tempStack.pop();
+		}
+		
+		
 		return toReturn;
 	}
 	
