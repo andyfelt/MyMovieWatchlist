@@ -11,7 +11,7 @@ public class MovieListTests {
 		MovieLibrary library = new MovieLibrary();
 		library.fromFile("u.item");
 		boolean[] genres = library.top().getMovieType();
-		MovieList list = new MovieList();
+		MovieLibrary list = new MovieLibrary();
 		MovieLibrary movies = list.findGoodType(genres, library, queue, 2.5);
 		System.out.println(movies);
 	}
