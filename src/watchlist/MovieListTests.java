@@ -11,9 +11,11 @@ public class MovieListTests {
 		MovieLibrary library = new MovieLibrary();
 		library.fromFile("u.item");
 		boolean[] genres = library.top().getMovieType();
-		MovieLibrary list = new MovieLibrary();
-		MovieLibrary movies = list.findGoodType(genres, library, queue, 2.5);
+		MovieLibrary movies = library.findGoodType(genres, queue, 4.5);
 		System.out.println(movies);
+		movies.weed();
+		System.out.println(movies);
+		
+		System.out.println(movies.top().toFile());
 	}
-
 }

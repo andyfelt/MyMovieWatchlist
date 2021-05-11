@@ -32,16 +32,31 @@ public class Movie{
 		this.releaseDate = line[2];
 		this.videoReleaseDate = line[3];
 		this.url = line[4];
-		int a = 0;
-		for(int i = 5; i<line.length; i++) { //Create the movieType array
-			if(line[i].equals("1")) {
-				movieType[a] = true;
+
+		for(int i = 0; i < movieTypeLength; i++) { //Create the movieType array
+			if(line[i + 5].equals("1")) {
+				movieType[i] = true;
 			}
 			else {
-				movieType[a] = false;
+				movieType[i] = false;
 			}
-			a ++;
 		}
+	}
+	// Method toFile, writes a single movie into a file
+	public String toFile() {
+		String toReturn = (movieID + "|" 
+	+ movieName 
+	+ "|" + releaseDate 
+	+ "|" + videoReleaseDate
+	+ "|" + url);
+		for(int i = 0; i < movieTypeLength; i++) {
+			if(movieType[i]) {
+				toReturn += "|1";
+			}else {
+				toReturn += "|0";
+			}
+		}
+		return toReturn;
 	}
 	
 	//Create getters and setters

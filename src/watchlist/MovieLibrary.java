@@ -115,13 +115,13 @@ public class MovieLibrary extends LinkedStack<Movie> {
 	}
 	
 	// finding the movies that satisfy one the genre inputs
-		public MovieLibrary findGoodType(boolean[] genreType, MovieLibrary fullLibrary, RankingQueue queue, double avgRating) {
+		public MovieLibrary findGoodType(boolean[] genreType, RankingQueue queue, double avgRating) {
 			MovieLibrary toReturn = new MovieLibrary();
 			MovieLibrary tempStack = new MovieLibrary();
 			
 			//for each movie in fullLibrary - find the movies that fit the genreType
-			while (!fullLibrary.isEmpty()) { // while we are not at the bottom of the stack
-				Movie currentMovie = fullLibrary.top();
+			while (!this.isEmpty()) { // while we are not at the bottom of the stack
+				Movie currentMovie = this.top();
 				boolean[] currentMovieGenres = currentMovie.getMovieType();
 				for(int i = 0; i<Movie.movieTypeLength; i++) {
 					//compare userGenreList to movieGenreList - if any match, include
@@ -132,12 +132,12 @@ public class MovieLibrary extends LinkedStack<Movie> {
 					//move those movies into the toReturn library
 				}
 				tempStack.push(currentMovie);
-				fullLibrary.pop();
+				this.pop();
 			}
 			
 			//while loop to push everything back on the library
 			while (!tempStack.isEmpty()) {
-				fullLibrary.push(tempStack.top());
+				this.push(tempStack.top());
 				tempStack.pop();
 			}
 
@@ -145,21 +145,38 @@ public class MovieLibrary extends LinkedStack<Movie> {
 		}
 		
 		public void weed() {
+			
+			MovieLibrary tempStack = new MovieLibrary();
+			Movie currentMovie;
+			Scanner userInput = new Scanner(System.in);
+			String line;
+			
 			while(!this.isEmpty()) {
 				
-				Movie currentMovie = this.top();
+				currentMovie = this.top();
+				
 				System.out.println(currentMovie);
 				
-				System.out.println("Keep this movie: Y or N?");
-				
-				Scanner userInput = new Scanner(System.in);
-				String line = userInput.nextLine();
+				System.out.println("Keep this movie: Y or N?^");
+								
+				line = userInput.nextLine();
 				
 				if(line.equalsIgnoreCase("Y")) {
-					//Here we are
-					
-				}
+					tempStack.push(currentMovie);
+				}				
+				this.pop();
 			}
+			userInput.close();
 			
+			while(!tempStack.isEmpty()) {
+				
+				this.push(tempStack.top());
+				tempStack.pop();
+			}
 		}
+		public void libraryToFile(String fileName) {
+			//TODO this is where we are
+			//
+		}
+		// another method should take new movies and add them to watch list/file
 }
