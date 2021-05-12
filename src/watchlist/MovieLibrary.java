@@ -2,6 +2,9 @@ package watchlist;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 import ch03.stacks.LinkedStack;
@@ -54,12 +57,12 @@ public class MovieLibrary extends LinkedStack<Movie> {
 			if(currentNode.getInfo().getMovieName().toLowerCase().contains(testTitle)) {
 				if(currentNode.getInfo().getMovieName().equalsIgnoreCase(testTitle)) {
 					test = true;
-					System.out.println("This movie was found!");
-					System.out.println(currentNode.getInfo().toString());
+					//System.out.println("This movie was found!");
+					//System.out.println(currentNode.getInfo().toString());
 					return test;
 				}
-				System.out.println("There was a partial match.");
-				System.out.println(currentNode.getInfo().toString());	
+				//System.out.println("There was a partial match.");
+				//System.out.println(currentNode.getInfo().toString());	
 			}
 			currentNode = currentNode.getLink();
 		}
@@ -174,9 +177,31 @@ public class MovieLibrary extends LinkedStack<Movie> {
 				tempStack.pop();
 			}
 		}
-		public void libraryToFile(String fileName) {
-			//TODO this is where we are
-			//
+		public void libraryToFile(String fileName) throws IOException {
+			PrintWriter toSave = new PrintWriter(fileName);
+			MovieLibrary tempStack = new MovieLibrary();
+			
+			while(!this.isEmpty()) {
+				tempStack.push(this.top());
+				toSave.println(this.top().toFile());
+				this.pop();
+			}
+			toSave.close();
+			
+			while(!tempStack.isEmpty()) {
+				this.push(tempStack.top());
+				tempStack.pop();
+			}
 		}
 		// another method should take new movies and add them to watch list/file
+		
+		public void appendLibrary(MovieLibrary toAdd) {
+			while(!toAdd.isEmpty()) {
+				Movie topMovie = toAdd.top();
+				if(!this.inLibrary(topMovie.getMovieName())) {
+					this.push(topMovie);
+				}
+				toAdd.pop();
+			}
+		}
 }
