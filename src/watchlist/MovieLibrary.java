@@ -162,6 +162,7 @@ public class MovieLibrary extends LinkedStack<Movie> {
 				
 				System.out.println("Keep this movie: Y or N?^");
 								
+//				userInput.nextLine();
 				line = userInput.nextLine();
 				
 				if(line.equalsIgnoreCase("Y")) {
@@ -169,7 +170,7 @@ public class MovieLibrary extends LinkedStack<Movie> {
 				}				
 				this.pop();
 			}
-			userInput.close();
+//			userInput.close();
 			
 			while(!tempStack.isEmpty()) {
 				

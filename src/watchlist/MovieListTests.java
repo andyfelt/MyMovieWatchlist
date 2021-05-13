@@ -32,16 +32,16 @@ public class MovieListTests {
 		library.fromFile("u.item");
 		library.pop();
 		boolean[] genres = library.top().getMovieType();
-		MovieLibrary movies = library.findGoodType(genres, queue, 4.5);
+		MovieLibrary movies = library.findGoodType(genres, queue, 3.5);
 		System.out.println(movies);
 		movies.weed();
 		System.out.println(movies);
 		
+		MovieLibrary merged = new MovieLibrary();
+		merged.fromFile("2Watch");
+		merged.appendLibrary(movies);
 		
-		
-		
-		
-		
-		//we are here make test with methods
+		System.out.println(merged);
+		merged.libraryToFile("2Watch");
 	}
 }
